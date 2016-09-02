@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Alumnos", "http://localhost:1811", "{3B09791D-61AB-4B24-AB43-B3190FDA96A3}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{b2da118e-c5d0-4c47-81ab-2d3d8ee42a00}|BusAlumnos.dll;{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A}|DatAlumnos.dll;{73FF2771-52F0-4ED0-92D1-E29F87188F4F}|EntAlumnos.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1811"
+		Debug.AspNetCompiler.PhysicalPath = "Alumnos\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1811\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1811"
+		Release.AspNetCompiler.PhysicalPath = "Alumnos\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1811\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Alumnos\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.-UI", "1.-UI", "{E6D4D44A-80F0-4C0A-B568-FC9DE83AE8AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.-BUSINESS", "2.-BUSINESS", "{C6162D6B-3AC0-4A60-ADC5-959448ED572A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.-DATA", "3.-DATA", "{88C91410-7ACA-4ED3-9D03-2640187F239A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusAlumnos", "BusAlumnos\BusAlumnos.csproj", "{B2DA118E-C5D0-4C47-81AB-2D3D8EE42A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntAlumnos", "EntAlumnos\EntAlumnos.csproj", "{73FF2771-52F0-4ED0-92D1-E29F87188F4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatAlumnos", "DatAlumnos\DatAlumnos.csproj", "{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B09791D-61AB-4B24-AB43-B3190FDA96A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B09791D-61AB-4B24-AB43-B3190FDA96A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B09791D-61AB-4B24-AB43-B3190FDA96A3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B09791D-61AB-4B24-AB43-B3190FDA96A3}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B2DA118E-C5D0-4C47-81AB-2D3D8EE42A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2DA118E-C5D0-4C47-81AB-2D3D8EE42A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2DA118E-C5D0-4C47-81AB-2D3D8EE42A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2DA118E-C5D0-4C47-81AB-2D3D8EE42A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FF2771-52F0-4ED0-92D1-E29F87188F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FF2771-52F0-4ED0-92D1-E29F87188F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FF2771-52F0-4ED0-92D1-E29F87188F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FF2771-52F0-4ED0-92D1-E29F87188F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B09791D-61AB-4B24-AB43-B3190FDA96A3} = {E6D4D44A-80F0-4C0A-B568-FC9DE83AE8AC}
+		{B2DA118E-C5D0-4C47-81AB-2D3D8EE42A00} = {C6162D6B-3AC0-4A60-ADC5-959448ED572A}
+		{73FF2771-52F0-4ED0-92D1-E29F87188F4F} = {C6162D6B-3AC0-4A60-ADC5-959448ED572A}
+		{6E4D3B7A-DD75-4BF8-9C6E-BB3E8851779A} = {88C91410-7ACA-4ED3-9D03-2640187F239A}
+	EndGlobalSection
+EndGlobal
