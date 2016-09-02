@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <div>
-        <h2> Hola GEORGE </h2>
+        <h2>Mensaje Secreto</h2>
         <h1>Hola Git Hub</h1>
         <h2>hola Git h2 Mio</h2>
     </div>
