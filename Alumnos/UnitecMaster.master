@@ -51,7 +51,9 @@
                         <ul class="nav navbar-nav navbar-right">
 
                             <asp:Label Text="" ID="lblUsuario" runat="server" />
-                            <a id="" data-toggle="modal" data-target="#myModal">Login</a>&nbsp;&nbsp;<asp:LinkButton runat="server" Text="Salir" ID="lnkSalir" href="#"></asp:LinkButton>
+                            <asp:LinkButton id="lnkEntrar" runat="server" data-toggle="modal" data-target="#myModal">Login</asp:LinkButton>
+                            <%--<a id="" data-toggle="modal" data-target="#myModal">Login</a>--%>
+                            &nbsp;&nbsp;<asp:LinkButton runat="server" Text="Salir" ID="lnkSalir" href="#" OnClick="lnkSalir_Click"></asp:LinkButton>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +88,7 @@
                                         <div style="margin-bottom: 25px" class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-                                            <asp:TextBox runat="server" ID="txtMAIL" type="text" class="form-control" name="username" value="" placeholder="email"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtMail" type="text" class="form-control" name="username" value="" placeholder="email"></asp:TextBox>
                                             <%--<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email"/--%>
                                         </div>
 
@@ -111,9 +113,9 @@
 
                                         <div style="margin-top: 10px" class="form-group">
                                             <!-- Button -->
-
                                             <div class="col-sm-12 controls">
-                                                <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                                <asp:LinkButton runat="server" Text="Login" class="btn btn-success" ID="lnkLogin" OnClick="lnkLogin_Click"></asp:LinkButton>
+                                                <%--<a id="btn-login" href="#" class="btn btn-success">Login  </a>--%>
                                                 <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
                                                 <hr />
                                             </div>
