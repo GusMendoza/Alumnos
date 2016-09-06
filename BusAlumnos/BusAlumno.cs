@@ -33,8 +33,8 @@ namespace Unitec.CRUD.Business
         }
         public EntAlumno ObtenerUnAlumno(int id)
         {
-            DataRow dr = new DataRow();
-            EntAlumno ent = new DataRow();
+            DataRow dr = new DatAlumno().ObtenerUnAlumno(id);
+            EntAlumno ent = new EntAlumno();
             ent.id = Convert.ToInt32(dr["ALUM_ID"]);
             ent.nombre = dr["ALUM_NOMB"].ToString();
             ent.fecha = Convert.ToDateTime(dr["ALUM_FECH"]);
@@ -44,7 +44,7 @@ namespace Unitec.CRUD.Business
             ent.promedio = Convert.ToDouble(dr["ALUM_PROM"]);
             return ent;
         }
-        public void ActualizarAlumno(EntAlumno ent) 
+        public void ActualizarAlumno(EntAlumno ent)
         {
             int fila = new DatAlumno().ActualizarAlumno(ent.id, ent.nombre, ent.fecha, ent.estatus, ent.sexoId, ent.foto, ent.promedio);
             if (fila != 1)
