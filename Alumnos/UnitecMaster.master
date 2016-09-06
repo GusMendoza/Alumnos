@@ -10,50 +10,136 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        
-      <a class="navbar-brand"> <span class="label label-primary">UNITEC</span></a>       
-    </div>
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>    
+                           <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" class="active"><a href="#">UNITEC</a></li>
+                </ul>
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-       
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <asp:label Text="" id="lblUsuario" runat="server" />
+                    <a id="" data-toggle="modal" data-target="#myModal">Login</a> &nbsp; &nbsp; <a id="" href="#">Salir</a>
+                </ul>
+            </div>
+    </nav>
 </head>
-<body>
+  <body>
+
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="body" runat="server">
         </asp:ContentPlaceHolder>
-        hr />
-            <footer class="panel-footer text-center">
-                <h6 style="margin: auto"><span class="label label-primary">UNITEC</span> </h6>
-            </footer>
+        <hr />
+        <footer class="panel-footer text-center">
+            <h9 style="margin: auto"><span class="label label-primary">UNITEC</span> </h9>
+        </footer>
+        </div> 
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Iniciar Sesion</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title">Sign In</div>
+                                <div style="float: right; font-size: 80%; position: relative; top: -10px"><a href="#">Forgot password?</a></div>
+                            </div>
+
+                            <div style="padding-top: 30px" class="panel-body">
+
+                                <div style="display: none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                                <form id="loginform" class="form-horizontal" role="form">
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                        <asp:TextBox runat="server" id="txtMAIL" type="text" class="form-control" name="username" value="" placeholder="username or email"></asp:TextBox>      
+                                        <%--<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email"/--%>
+                                    </div>
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+                                         <asp:TextBox runat="server" id="txtPassword" type="password" class="form-control" name="password" placeholder="password"></asp:TextBox>  
+                                        <%--<input id="login-password" type="password" class="form-control" name="password" placeholder="password"/>--%>
+                                    </div>
+
+
+
+                                    <div class="input-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input id="login-remember" type="checkbox" name="remember" value="1"/>
+                                                Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div style="margin-top: 10px" class="form-group">
+                                        <!-- Button -->
+
+                                        <div class="col-sm-12 controls">
+                                            <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                            <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                                            <hr />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 control">
+                                            <div style="border-top: 1px solid#888; padding-top: 15px; font-size: 85%">
+                                                Don't have an account! 
+                                        <a href="#" onclick="$('#loginbox').hide(); $('#signupbox').show()">Sign Up Here
+                                        </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.js"></script>
