@@ -12,11 +12,13 @@ namespace Unitec.CRUD.Business
     public class BusAlumno
     {
         public BusAlumno() { }
-        public List<EntAlumno> ObtenerAlumnos()
+        public EntTodo ObtenerAlumnos()
         {
-            DataTable dt = new DatAlumno().ObtenerAlumnos();
+            DataSet ds = new DatAlumno().ObtenerAlumnos();
+            EntTodo todo = new EntTodo();
             List<EntAlumno> lista = new List<EntAlumno>();
-            foreach (DataRow dr in dt.Rows)
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 EntAlumno ent = new EntAlumno();
                 ent.id = Convert.ToInt32(dr["ALUM_ID"]);
@@ -24,12 +26,27 @@ namespace Unitec.CRUD.Business
                 ent.fecha = Convert.ToDateTime(dr["ALUM_FECH"]);
                 ent.estatus = Convert.ToBoolean(dr["ALUM_ESTA"]);
                 ent.sexoId = Convert.ToInt32(dr["ALUM_SEXO_ID"]);
+                ent.sexo = new EntSexo();
+                ent.sexo.nombre = dr["SEXO_NOMB"].ToString();
                 ent.foto = dr["ALUM_FOTO"].ToString();
                 ent.promedio = Convert.ToDouble(dr["ALUM_PROM"]);
                 lista.Add(ent);
 
             }
-            return lista;
+            todo.Alumnos = lista;
+
+            List<EntTelefono> lstTel = new List<EntTelefono>();
+            foreach (DataRow dr in ds.Tables[1].Rows)
+            {
+                EntTelefono ent = new EntTelefono();
+                ent.id = Convert.ToInt32(dr["TELE_ID"]);
+                ent.alumnoId = Convert.ToInt32(dr["TELE_ALUM_ID"]);
+                ent.numero = dr["TELE_NUME"].ToString();
+                ent.cataTeleId = Convert.ToInt32(dr["TELE_CATA_TELE_ID"]);
+                lstTel.Add(ent);
+            }
+            todo.Telefonos = lstTel;
+            return todo;
         }
         public EntAlumno ObtenerUnAlumno(int id)
         {
@@ -79,6 +96,21 @@ namespace Unitec.CRUD.Business
                 throw new ApplicationException("Mail o Contraseña no validos");
             }
 
+        }
+
+        public List<EntSexo> ObtenerSexo()
+        {
+            DataTable dt = new DatAlumno().ObtenerSexo();
+            List<EntSexo> lista = new List<EntSexo>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                EntSexo ent = new EntSexo();
+                ent.id = Convert.ToInt32(dr["SEXO_ID"]);
+                ent.nombre = dr["SEXO_NOMB"].ToString();
+              
+                lista.Add(ent);
+            }
+            return lista; 
         }
     }
 }

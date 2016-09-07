@@ -43,6 +43,7 @@
     <Compile Include="EntAlumno.cs" />
     <Compile Include="EntSexo.cs" />
     <Compile Include="EntTelefono.cs" />
+    <Compile Include="EntTodo.cs" />
     <Compile Include="EntUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

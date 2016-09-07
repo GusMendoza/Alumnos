@@ -14,8 +14,17 @@ namespace Unitec.CRUD.Business.Entity
         public DateTime fecha { get; set; }
         public bool estatus { get; set; }
         public int sexoId { get; set; }
+        private EntSexo Sexo;
+
+        public EntSexo sexo
+        {
+            get { return Sexo; }
+            set { Sexo = value; }
+        }
+        
         public string foto { get; set; }
         public double promedio { get; set; }
+        public string telefono { get; set; }
 
         //ALUM_ID, ALUM_NOMB, ALUM_FECH, ALUM_ESTA, ALUM_SEXO_ID, ALUM_FOTO, ALUM_PROM estos bienen de la base de datos
     }

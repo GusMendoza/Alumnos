@@ -11,14 +11,14 @@ namespace Unitec.CRUD.Data
     public class DatAlumno: DatAbstracta
     {
         public DatAlumno() { }
-        public DataTable ObtenerAlumnos()
+        public DataSet ObtenerAlumnos()
         {
             SqlCommand com = new SqlCommand("spObtenerAlumnos", con);
             com.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
         }
         public DataRow ObtenerUnAlumno(int id) 
         {
@@ -116,6 +116,16 @@ namespace Unitec.CRUD.Data
             da.Fill(dt);
             return dt;
 
+        }
+
+        public DataTable ObtenerSexo()
+        {
+            SqlCommand com = new SqlCommand("spObtenerSexo", con);
+            com.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
     }
 }
