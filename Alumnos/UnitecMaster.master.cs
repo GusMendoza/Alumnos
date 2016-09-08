@@ -15,7 +15,9 @@ public partial class UnitecMaster : System.Web.UI.MasterPage
     }
     protected void lnkLogin_Click(object sender, EventArgs e)
     {
-        EntUsuario ent = new BusAlumno().ValidarAlumno(txtMail.Text, txtPassword.Text);
+        try
+        {
+ EntUsuario ent = new BusAlumno().ValidarAlumno(txtMail.Text, txtPassword.Text);
         if (ent != null)
         {
             lblUsuario.Text = "Bienvenido" + ent.nombre;
@@ -24,6 +26,12 @@ public partial class UnitecMaster : System.Web.UI.MasterPage
         else
             lnkEntrar.Text = "Login";
 
+        }
+        catch (Exception ex)
+        {
+
+            MostrarMensage(ex.Message);
+        }
     }
     protected void lnkSalir_Click(object sender, EventArgs e)
     {
