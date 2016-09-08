@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UnitecMaster.master" AutoEventWireup="true" CodeFile="GridAlumnos.aspx.cs" Inherits="GridAlumnos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <div class="row" >
@@ -121,7 +120,7 @@
     <script src="js/bootstrap-datetimepicker.js"></script>
     <script>
         $(document).ready(function () {
-            $('#body_gvPeliculas_FTtxtFecha').datetimepicker({
+            $('#datetimepicker1').datetimepicker({
                 format: 'L',
                 locale: 'es'
             });
