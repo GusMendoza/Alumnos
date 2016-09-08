@@ -15,7 +15,7 @@ public partial class GridAlumnos : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                CargarGridAlumnos();
+                CargarGridAlumnos(null);
             }
         }
         catch (Exception ex)
@@ -25,7 +25,7 @@ public partial class GridAlumnos : System.Web.UI.Page
         }
     }
 
-    private void CargarGridAlumnos()
+    private void CargarGridAlumnos(int? fila)
     {
         EntTodo todo = new BusAlumno().ObtenerAlumnos();
         gvAlumnos.DataSource = todo.Alumnos;
@@ -33,12 +33,18 @@ public partial class GridAlumnos : System.Web.UI.Page
         int contador = 0;
         foreach (GridViewRow gvAl in gvAlumnos.Rows)
         {
-            Label lbl = (Label)gvAlumnos.Rows[contador].FindControl("ITlblTelefono");
-            foreach (EntTelefono tel in todo.Telefonos)
+            if ( fila != contador)
             {
-                if ((gvAlumnos.DataKeys[contador].Values["id"]).ToString() == tel.alumnoId.ToString())
+
+
+                Label lbl = (Label)gvAlumnos.Rows[contador].FindControl("ITlblTelefono");
+                foreach (EntTelefono tel in todo.Telefonos)
                 {
-                    lbl.Text += tel.numero.ToString() + "<br />";
+
+                    if ((gvAlumnos.DataKeys[contador].Values["id"]).ToString() == tel.alumnoId.ToString())
+                    {
+                        lbl.Text += tel.numero.ToString() + "<br />";
+                    }
                 }
             }
             contador++;   
@@ -63,7 +69,7 @@ public partial class GridAlumnos : System.Web.UI.Page
         try
         {
             gvAlumnos.EditIndex = -1;
-            CargarGridAlumnos();
+            CargarGridAlumnos(null);
         }
         catch (Exception ex)
         {
@@ -88,7 +94,7 @@ public partial class GridAlumnos : System.Web.UI.Page
         try
         {
             gvAlumnos.EditIndex = e.NewEditIndex;
-            CargarGridAlumnos();
+            CargarGridAlumnos(e.NewEditIndex);
             DropDownList ddlSexo = (DropDownList)gvAlumnos.Rows[e.NewEditIndex].FindControl("EITddlSexo");
             ddlSexo.DataSource = new BusAlumno().ObtenerSexo();
             ddlSexo.DataTextField = "nombre";
