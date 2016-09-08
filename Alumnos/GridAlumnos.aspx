@@ -1,13 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UnitecMaster.master" AutoEventWireup="true" CodeFile="GridAlumnos.aspx.cs" Inherits="GridAlumnos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<<<<<<< HEAD
-     <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-=======
     <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" />
->>>>>>> origin/master
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <div class="row" >
