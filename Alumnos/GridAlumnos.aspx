@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UnitecMaster.master" AutoEventWireup="true" CodeFile="GridAlumnos.aspx.cs" Inherits="GridAlumnos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UnitecMaster.master" AutoEventWireup="true" CodeFile="GridAlumnos.aspx.cs" Inherits="GridAlumnos"  MaintainScrollPositionOnPostback="true"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" />
@@ -102,6 +102,9 @@
                         <ItemTemplate>
                             <asp:LinkButton ID="ITlnkEditar" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar"></asp:LinkButton>
                         </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:LinkButton Text="Agregar" ID="FTlnkAgregar" runat="server" OnClick="FTlnkAgregar_Click" />
+                        </FooterTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="[Eliminar]" ShowHeader="False">
                         <ItemTemplate>

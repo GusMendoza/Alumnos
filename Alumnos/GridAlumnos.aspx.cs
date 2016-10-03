@@ -120,4 +120,23 @@ public partial class GridAlumnos : System.Web.UI.Page
             MostraMensaje(ex.Message);
         }
     }
+    protected void FTlnkAgregar_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            EntAlumno ent = new EntAlumno();
+            ent.nombre = ((TextBox)gvAlumnos.FooterRow.FindControl("FTtxtNombre")).Text;
+            ent.fecha = Convert.ToDateTime(((TextBox)gvAlumnos.FooterRow.FindControl("FTtxtFecha")).Text);
+            ent.estatus = ((CheckBox)gvAlumnos.FooterRow.FindControl("FTchkEstatus")).Checked;
+            ent.promedio = Convert.ToDouble(((TextBox)gvAlumnos.FooterRow.FindControl("FTtxtPromedio")).Text);
+            ent.sexoId = Convert.ToInt32(((DropDownList)gvAlumnos.FooterRow.FindControl("FTddlSexo")).SelectedValue);
+            ent.foto = ((FileUpload)gvAlumnos.FooterRow.FindControl("FTfuFoto")).FileName;           
+            
+        }
+        catch (Exception ex)
+        {
+
+            MostraMensaje(ex.Message);
+        }
+    }
 }
